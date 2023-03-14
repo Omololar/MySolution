@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<WeatherViewModel>
+
+<table>
+ <thead>
+            <tr>
+                <td>Date</td>
+                <td>Summary</td>
+                <td>Temperature(c)</td>
+                  <td>Temperature(f)</td>
+            </tr>
+        </thead>
+   @foreach (var item in Model){
+        <tr>
+
+            <td>@item.Date</td>
+            <td>@item.Summary</td>       
+            <td>@item.TemperatureC</td>
+            <td>@item.TemperatureF</td>
+        </tr>
+
+        
+    }
+ </table>
+
+ @for(int i=0; i<10; i++){
+
+ }
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

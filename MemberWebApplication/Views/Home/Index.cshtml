@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<UserModel>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+    @foreach(var user in Model){
+        <ul>
+            <li>@user.Id , @user.Username, @user.CreationDate
+            @Html.ActionLink("Detail", "Detail", new {id=user.Id /* id = Model.PrimaryKey */ })
+            </li>
+       
+           
+        </ul>
+    }
+    
+    
