@@ -1,5 +1,7 @@
 
 using API.Data;
+using API.Interface;
+using API.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +11,8 @@ builder.Services.AddDbContext<APIContext>(opt => {
     
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
+builder.Services.AddScoped<IMemberInterface, MemberRepository>();
+builder.Services.AddScoped<IUserInterface, UserRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
