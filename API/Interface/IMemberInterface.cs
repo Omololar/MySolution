@@ -7,5 +7,9 @@ namespace API.Interface
         Member GetMemberById(int memberId);
 
         List<Member> GetAllMember();
+
+        Member AddNewMember(Member member);
+        Member UpdateMember(Member member);
+        bool DeleteMember(int memberId);
     }
 }
